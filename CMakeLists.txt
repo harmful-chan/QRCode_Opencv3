@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 2.8) 
+project( qr )
+find_package( OpenCV REQUIRED ) 
+INCLUDE_DIRECTORIES( ${OPENCV_INCLUDE_DIR} )
+MESSAGE( STATUS "OpenCV_LIBS: " ${OpenCV_LIBS} ) 
+add_executable( qr qr.cpp ) 
+target_link_libraries( qr ${OpenCV_LIBS} )  
+target_link_libraries( qr /usr/local/lib/libzxing.a )
